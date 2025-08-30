@@ -12,7 +12,7 @@ public class App extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("client/chat_ui.fxml"));
             Scene scene = new Scene(root);
-            Image tongLogo = new Image("/resources/tongLogo.png");
+            Image tongLogo = new Image("/views/tongLogo.png");
 
             stage.setTitle("Tong");
             stage.getIcons().add(tongLogo);
