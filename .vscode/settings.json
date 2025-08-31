@@ -1,5 +1,5 @@
 {
-    "java.debug.settings.console": "internalConsole",
+    // "java.debug.settings.console": "internalConsole",
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
