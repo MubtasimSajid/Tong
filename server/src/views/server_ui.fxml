@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ap_main" prefHeight="396" prefWidth="478" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="server.ServerController">
+<AnchorPane fx:id="ap_main" prefHeight="396" prefWidth="478" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ServerController">
     <children>
         <Button fx:id="button_send" layoutX="404" layoutY="338" text="Send" />
         <TextField fx:id="tf_message" layoutX="30" layoutY="338" prefHeight="26" prefWidth="361" />
@@ -17,9 +17,9 @@
                 <VBox fx:id="vbox_messages" prefHeight="248" prefWidth="412" />
             </content>
         </ScrollPane>
-        <Label layoutX="181.0" layoutY="25.0" text="Tong Chat">
+        <Label layoutX="183.0" layoutY="22.0" text="Tong Chat">
             <font>
-                <Font name="Arial Rounded MT Bold" size="23" />
+                <Font name="Ebrima Bold" size="23.0" />
             </font>
         </Label>
     </children>

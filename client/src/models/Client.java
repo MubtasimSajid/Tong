@@ -1,4 +1,4 @@
-package client;
+package models;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,10 +7,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
+import controllers.ClientController;
 import javafx.scene.layout.VBox;
-import server.ServerController;
 
 public class Client {
+
     private Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
@@ -45,11 +46,11 @@ public class Client {
             public void run() {
                 while (socket.isConnected()) {
                     try {
-                        String messageFromClient = bufferedReader.readLine();
-                        ServerController.addLabel(messageFromClient, vbox);
+                        String messageFromServer = bufferedReader.readLine();
+                        ClientController.addLabel(messageFromServer, vbox);
                     } catch (IOException e) {
-                        e.printStackTrace();
                         System.out.println("Error receiving message from server");
+                        e.printStackTrace();
                         closeEverything(socket, bufferedReader, bufferedWriter);
                         break;
                     }
@@ -58,14 +59,14 @@ public class Client {
         }).start();
     }
 
-    public void closeEverything(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
+    public void closeEverything(Socket socket, BufferedReader br, BufferedWriter bw) {
         try {
-            if (bufferedReader != null) {
-                bufferedReader.close();
+            if (br != null) {
+                br.close();
             }
 
-            if (bufferedWriter != null) {
-                bufferedWriter.close();
+            if (bw != null) {
+                bw.close();
             }
 
             if (socket != null) {

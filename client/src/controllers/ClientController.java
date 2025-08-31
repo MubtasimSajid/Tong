@@ -1,7 +1,7 @@
-package client;
+package controllers;
 
+import java.io.IOError;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,19 +13,20 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import models.Client;
 
 public class ClientController implements Initializable {
+
     @FXML
     private Button button_send;
 
@@ -42,9 +43,9 @@ public class ClientController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         try {
             client = new Client(new Socket("localhost", 1234));
-            System.out.println("Connected to server");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,24 +64,21 @@ public class ClientController implements Initializable {
             public void handle(ActionEvent event) {
                 String messageToSend = tf_message.getText();
                 if (!messageToSend.isEmpty()) {
-                    HBox hBox = new HBox();
-                    hBox.setAlignment(Pos.CENTER_RIGHT);
-
-                    hBox.setPadding(new Insets(5, 5, 5, 10));
+                    HBox hbox = new HBox();
+                    hbox.setAlignment(Pos.CENTER_RIGHT);
+                    hbox.setPadding(new Insets(5, 5, 5, 10));
                     Text text = new Text(messageToSend);
-                    TextFlow textFlow
-                            = new TextFlow(text);
-
+                    TextFlow textFlow = new TextFlow(text);
                     textFlow.setStyle(
                             "-fx-color: rgb(239, 242, 255);" +
-                            "fx-background-color: rgb(15, 125, 242);" +
-                            "fx-background-radius: 20px;");
+                                    "-fx-background-color: rgb(15, 125, 242);" +
+                                    "-fx-background-radius: 20px;");
 
                     textFlow.setPadding(new Insets(5, 10, 5, 10));
                     text.setFill(Color.color(0.934, 0.945, 0.996));
 
-                    hBox.getChildren().add(textFlow);
-                    vbox_messages.getChildren().add(hBox);
+                    hbox.getChildren().add(textFlow);
+                    vbox_messages.getChildren().add(hbox);
 
                     client.sendMessageToServer(messageToSend);
                     tf_message.clear();
@@ -89,24 +87,24 @@ public class ClientController implements Initializable {
         });
     }
 
-    public static void addLabel(String msgFromServer, VBox vbox) {
-        HBox hBox = new HBox();
-        hBox.setAlignment(Pos.CENTER_LEFT);
-        hBox.setPadding(new Insets(5, 5, 5, 10));
+    public static void addLabel(String messageFromServer, VBox vbox) {
+        HBox hbox = new HBox();
+        hbox.setAlignment(Pos.CENTER_LEFT);
+        hbox.setPadding(new Insets(5, 5, 5, 10));
 
-        Text text = new Text(msgFromServer);
+        Text text = new Text(messageFromServer);
         TextFlow textFlow = new TextFlow(text);
-
-        textFlow.setStyle("-fx-background-color: rgb(233, 233, 235);" +
-                "fx-background-radius: 20px;");
-
+        textFlow.setStyle(
+                "-fx-background-color: rgb(233, 233, 235);" +
+                        "-fx-background-radius: 20px;");
         textFlow.setPadding(new Insets(5, 10, 5, 10));
-        hBox.getChildren().add(textFlow);
+
+        hbox.getChildren().add(textFlow);
 
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                vbox.getChildren().add(hBox);
+                vbox.getChildren().add(hbox);
             }
         });
     }

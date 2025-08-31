@@ -10,11 +10,11 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/server/server_ui.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/views/server_ui.fxml"));
             Scene scene = new Scene(root);
             Image tongLogo = new Image("/views/tongLogo.png");
 
-            stage.setTitle("Tong");
+            stage.setTitle("Tong - Server");
             stage.getIcons().add(tongLogo);
             stage.setScene(scene);
             stage.show();
