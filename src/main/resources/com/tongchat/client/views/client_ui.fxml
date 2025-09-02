@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" prefHeight="700.0" prefWidth="1000.0" styleClass="main-border-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tongchat.client.controllers.PremiumClientController">
+   <!-- Left Sidebar -->
+   <left>
+      <VBox prefWidth="320.0" styleClass="sidebar">
+         <!-- Header Section -->
+         <HBox alignment="CENTER_LEFT" prefHeight="70.0" styleClass="header-section" style="-fx-padding: 15;">
+            <Circle fill="#ffffff" radius="20.0" />
+            <VBox alignment="CENTER_LEFT" spacing="2.0">
+               <HBox.margin>
+                  <Insets left="12.0" />
+               </HBox.margin>
+               <Label fx:id="userNameLabel" styleClass="user-name" text="Anonymous User">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Label fx:id="statusLabel" styleClass="user-status" text="Online">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="10.0">
+               <Button fx:id="themeToggleButton" styleClass="theme-toggle" mnemonicParsing="false" text="🌙" />
+               <Button fx:id="settingsButton" styleClass="settings-button" mnemonicParsing="false" text="⚙" />
+            </HBox>
+         </HBox>
+         
+         <!-- Search Bar -->
+         <HBox alignment="CENTER" style="-fx-padding: 15 15 10 15;">
+            <TextField fx:id="searchField" styleClass="search-field" promptText="Search conversations..." style="-fx-background-radius: 20; -fx-padding: 8 15 8 15;" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </HBox>
+         
+         <!-- Quick Actions -->
+         <HBox alignment="CENTER" spacing="10.0" style="-fx-padding: 5 15 15 15;">
+            <Button fx:id="newChatButton" styleClass="new-chat-button" style="-fx-background-radius: 20; -fx-padding: 8 15 8 15;" text="+ New Chat">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="createGroupButton" styleClass="create-group-button" style="-fx-background-radius: 20; -fx-padding: 8 15 8 15;" text="+ Group">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </HBox>
+         
+         <!-- Conversations List -->
+         <ListView fx:id="conversationsList" styleClass="list-view" VBox.vgrow="ALWAYS" />
+      </VBox>
+   </left>
+   
+   <!-- Main Chat Area -->
+   <center>
+      <VBox styleClass="chat-area">
+         <!-- Chat Header -->
+         <HBox alignment="CENTER_LEFT" prefHeight="70.0" styleClass="chat-header" style="-fx-padding: 15;">
+            <Circle fill="#0084ff" radius="22.0" />
+            <VBox alignment="CENTER_LEFT" spacing="2.0">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <Label fx:id="chatPartnerName" styleClass="chat-partner-name" text="Select a conversation">
+                  <font>
+                     <Font name="System Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Label fx:id="chatPartnerStatus" styleClass="chat-partner-status" text="Click on a conversation to start chatting">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Label>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox spacing="15.0">
+               <Button fx:id="callButton" styleClass="action-button" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-padding: 10;" text="📞" />
+               <Button fx:id="videoButton" styleClass="action-button" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-padding: 10;" text="📹" />
+               <Button fx:id="infoButton" styleClass="action-button" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-padding: 10;" text="ℹ" />
+            </HBox>
+         </HBox>
+         
+         <!-- Messages Area -->
+         <ScrollPane fx:id="messagesScrollPane" styleClass="scroll-pane" fitToWidth="true" VBox.vgrow="ALWAYS">
+            <VBox fx:id="messagesContainer" styleClass="messages-area" spacing="8.0" style="-fx-padding: 20;">
+            </VBox>
+         </ScrollPane>
+         
+         <!-- Message Input Area -->
+         <HBox alignment="CENTER" spacing="10.0" styleClass="input-area" style="-fx-padding: 15;">
+            <Button fx:id="attachButton" styleClass="action-button" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-padding: 8;" text="📎" />
+            <Button fx:id="emojiButton" styleClass="action-button" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-padding: 8;" text="😊" />
+            <TextArea fx:id="messageInput" styleClass="message-input" prefRowCount="1" promptText="Type a message..." style="-fx-background-radius: 20; -fx-padding: 10 15 10 15;" wrapText="true" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="sendButton" styleClass="send-button" mnemonicParsing="false" style="-fx-background-radius: 50; -fx-padding: 10 12 10 12;" text="➤">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </HBox>
+      </VBox>
+   </center>
+</BorderPane>
