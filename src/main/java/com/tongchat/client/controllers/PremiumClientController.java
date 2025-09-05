@@ -199,6 +199,10 @@ public class PremiumClientController implements Initializable {
         userNameLabel.setText(username);
         statusLabel.setText("Online");
         addSystemMessage("Welcome to Tong Messenger! 🎉");
+        
+        // Add sample conversations for demonstration
+        addSampleConversations();
+        
         stompSession.subscribe("/user/" + currentUsername + "/queue/private", new StompSessionHandlerAdapter() {
              @Override
             public Type getPayloadType(StompHeaders headers) {
@@ -209,6 +213,66 @@ public class PremiumClientController implements Initializable {
                 handleIncomingMessage((Map<String, Object>) payload);
             }
         });
+    }
+
+    private void addSampleConversations() {
+        Platform.runLater(() -> {
+            // Add some sample conversations to demonstrate the premium UI
+            addConversation("Alex Chen", "Hey! How's your day going? 😊", "2 min");
+            addConversation("Sarah Wilson", "The project looks great! 👍", "5 min");  
+            addConversation("Design Team", "New UI mockups are ready for review", "12 min");
+            addConversation("John Smith", "Thanks for the help earlier", "1 hr");
+            addConversation("Dev Community", "Anyone working with JavaFX lately?", "2 hr");
+            addConversation("Maria Garcia", "Coffee later? ☕", "3 hr");
+            addConversation("Tech News", "Latest updates in software development", "1 day");
+            
+            // Pre-select the first conversation
+            if (!conversations.isEmpty()) {
+                conversationsList.getSelectionModel().select(0);
+                HBox firstConversation = conversations.get(0);
+                if (firstConversation.getUserData() != null) {
+                    selectConversation(firstConversation.getUserData().toString());
+                }
+            }
+        });
+    }
+
+    private void addConversation(String name, String lastMessage, String time) {
+        HBox conversationItem = new HBox(15);
+        conversationItem.setAlignment(Pos.CENTER_LEFT);
+        conversationItem.setPadding(new Insets(12, 15, 12, 15));
+        conversationItem.getStyleClass().add("conversation-item");
+        conversationItem.setUserData(name);
+
+        // Avatar circle
+        Circle avatar = new Circle(25);
+        avatar.setFill(Color.web("#0084ff"));
+        avatar.getStyleClass().add("avatar");
+
+        // Name and message container
+        VBox messageContainer = new VBox(4);
+        HBox.setHgrow(messageContainer, Priority.ALWAYS);
+
+        // Name label
+        Label nameLabel = new Label(name);
+        nameLabel.setFont(Font.font("System", FontWeight.BOLD, 15));
+        nameLabel.getStyleClass().add("conversation-name");
+
+        // Last message label
+        Label messageLabel = new Label(lastMessage);
+        messageLabel.setFont(Font.font("System", 13));
+        messageLabel.getStyleClass().add("conversation-preview");
+        messageLabel.setMaxWidth(180);
+
+        // Time label
+        Label timeLabel = new Label(time);
+        timeLabel.setFont(Font.font("System", 11));
+        timeLabel.getStyleClass().add("conversation-time");
+
+        messageContainer.getChildren().addAll(nameLabel, messageLabel);
+        conversationItem.getChildren().addAll(avatar, messageContainer, timeLabel);
+
+        conversations.add(conversationItem);
     }
 
     private void handleRegister() {
@@ -430,10 +494,22 @@ public class PremiumClientController implements Initializable {
         Platform.runLater(() -> {
             if (mainBorderPane.getScene() != null) {
                 mainBorderPane.getScene().getStylesheets().clear();
+                
+                // Always apply the premium style first as base
+                try {
+                    String premiumStyleUrl = getClass().getResource("/com/tongchat/client/views/premium-style.css").toExternalForm();
+                    mainBorderPane.getScene().getStylesheets().add(premiumStyleUrl);
+                } catch (Exception e) {
+                    System.err.println("Could not load premium style");
+                }
+                
+                // Then apply the theme-specific styles
                 String themePath = isDarkTheme ? "/com/tongchat/client/views/dark-theme.css" : "/com/tongchat/client/views/light-theme.css";
                 try {
                     String themeUrl = getClass().getResource(themePath).toExternalForm();
                     mainBorderPane.getScene().getStylesheets().add(themeUrl);
+                    
+                    System.out.println("✅ Applied theme: " + (isDarkTheme ? "Dark" : "Light Premium White & Blue"));
                 } catch (Exception e) {
                     System.err.println("Could not load theme: " + themePath);
                     e.printStackTrace();

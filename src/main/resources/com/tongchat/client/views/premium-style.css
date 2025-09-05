@@ -1,59 +1,72 @@
-/* Tong Messenger Premium Stylesheet */
+/* Tong Messenger Premium Stylesheet - Enhanced White & Blue */
 
 /* Root styling */
 .root {
     -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     -fx-font-size: 14px;
+    -fx-base: #ffffff;
+    -fx-background: linear-gradient(to bottom, #f8f9fa, #ffffff);
 }
 
-/* Messenger-style message bubbles */
+/* Enhanced Messenger-style message bubbles */
 .message-bubble-own {
-    -fx-background-color: linear-gradient(to bottom, #0084ff, #006ce7);
-    -fx-background-radius: 18 18 4 18;
-    -fx-padding: 12 16 12 16;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 1);
+    -fx-background-color: linear-gradient(135deg, #0084ff, #0066cc);
+    -fx-background-radius: 20 20 6 20;
+    -fx-padding: 14 18 14 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,132,255,0.25), 4, 0, 0, 2);
+    -fx-border-radius: 20 20 6 20;
 }
 
 .message-bubble-other {
-    -fx-background-color: linear-gradient(to bottom, #f0f2f5, #e4e6ea);
-    -fx-background-radius: 18 18 18 4;
-    -fx-padding: 12 16 12 16;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 1);
+    -fx-background-color: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    -fx-background-radius: 20 20 20 6;
+    -fx-padding: 14 18 14 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 3, 0, 0, 1);
+    -fx-border-radius: 20 20 20 6;
 }
 
-/* Conversation list items */
+/* Enhanced conversation list items */
 .conversation-item {
-    -fx-padding: 12 15 12 15;
-    -fx-background-radius: 8;
+    -fx-padding: 16 18 16 18;
+    -fx-background-radius: 12;
     -fx-cursor: hand;
+    -fx-border-radius: 12;
 }
 
 .conversation-item:hover {
-    -fx-background-color: #f0f2f5;
+    -fx-background-color: linear-gradient(to right, #f0f2f5, #e3f2fd);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-effect: dropshadow(gaussian, rgba(0,132,255,0.1), 4, 0, 0, 1);
 }
 
 .conversation-item:selected {
-    -fx-background-color: #e7f3ff;
+    -fx-background-color: linear-gradient(135deg, #e3f2fd, #bbdefb);
     -fx-border-color: #0084ff;
-    -fx-border-width: 1;
-    -fx-border-radius: 8;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,132,255,0.2), 6, 0, 0, 2);
 }
 
-/* Input field styling */
+/* Enhanced input field styling */
 .message-input {
-    -fx-background-color: #f0f2f5;
-    -fx-background-radius: 20;
-    -fx-border-color: transparent;
-    -fx-padding: 10 15 10 15;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    -fx-background-radius: 25;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 25;
+    -fx-padding: 12 20 12 20;
     -fx-font-size: 14px;
     -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);
 }
 
 .message-input:focused {
     -fx-background-color: #ffffff;
     -fx-border-color: #0084ff;
     -fx-border-width: 2;
-    -fx-border-radius: 20;
+    -fx-border-radius: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,132,255,0.15), 4, 0, 0, 1);
 }
 
 /* Button styles */

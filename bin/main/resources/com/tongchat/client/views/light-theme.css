@@ -1,4 +1,4 @@
-/* Light Theme for Tong Messenger */
+/* Light Theme for Tong Messenger - Premium White & Blue */
 
 .root {
     -fx-base: #ffffff;
@@ -8,45 +8,66 @@
     -fx-default-button: #0084ff;
     -fx-focus-color: #0084ff;
     -fx-faint-focus-color: #0084ff22;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Main Layout */
 .main-border-pane {
-    -fx-background-color: #f8f9fa;
+    -fx-background-color: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.02), 10, 0, 0, 0);
 }
 
 /* Left Sidebar */
 .sidebar {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #e0e0e0;
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    -fx-border-color: #e3f2fd;
+    -fx-border-width: 0 1 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,132,255,0.1), 8, 0, 2, 0);
 }
 
 .header-section {
-    -fx-background-color: #0084ff;
+    -fx-background-color: linear-gradient(135deg, #0084ff, #0066cc);
+    -fx-background-radius: 15 15 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,132,255,0.3), 6, 0, 0, 2);
 }
 
 .user-name {
     -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 1, 0, 0, 1);
 }
 
 .user-status {
-    -fx-text-fill: #b3d9ff;
+    -fx-text-fill: #e3f2fd;
+    -fx-font-size: 11px;
 }
 
 .settings-button {
-    -fx-background-color: transparent;
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 20;
     -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-padding: 8 10 8 10;
+}
+
+.settings-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
 }
 
 .theme-toggle {
-    -fx-background-color: transparent;
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 20;
     -fx-text-fill: #ffffff;
     -fx-font-size: 16px;
+    -fx-padding: 8 10 8 10;
 }
 
 .theme-toggle:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.1);
-    -fx-background-radius: 15;
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
 }
 
 /* Search and Input Fields */
