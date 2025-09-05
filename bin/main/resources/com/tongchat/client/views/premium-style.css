@@ -1,0 +1,196 @@
+/* Tong Messenger Premium Stylesheet */
+
+/* Root styling */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Messenger-style message bubbles */
+.message-bubble-own {
+    -fx-background-color: linear-gradient(to bottom, #0084ff, #006ce7);
+    -fx-background-radius: 18 18 4 18;
+    -fx-padding: 12 16 12 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.message-bubble-other {
+    -fx-background-color: linear-gradient(to bottom, #f0f2f5, #e4e6ea);
+    -fx-background-radius: 18 18 18 4;
+    -fx-padding: 12 16 12 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+/* Conversation list items */
+.conversation-item {
+    -fx-padding: 12 15 12 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.conversation-item:hover {
+    -fx-background-color: #f0f2f5;
+}
+
+.conversation-item:selected {
+    -fx-background-color: #e7f3ff;
+    -fx-border-color: #0084ff;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+/* Input field styling */
+.message-input {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 20;
+    -fx-border-color: transparent;
+    -fx-padding: 10 15 10 15;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.message-input:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #0084ff;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+}
+
+/* Button styles */
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #0084ff, #006ce7);
+    -fx-text-fill: white;
+    -fx-background-radius: 50;
+    -fx-padding: 10 15 10 15;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,132,255,0.3), 4, 0, 0, 2);
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #0073e6, #005bb5);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.secondary-button {
+    -fx-background-color: #f0f2f5;
+    -fx-text-fill: #1c1e21;
+    -fx-background-radius: 50;
+    -fx-padding: 8 12 8 12;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e4e6ea;
+}
+
+/* Header styling */
+.chat-header {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0, 0, 1);
+}
+
+/* Sidebar styling */
+.sidebar {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 1 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 2, 0);
+}
+
+/* Search field */
+.search-field {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 20;
+    -fx-border-color: transparent;
+    -fx-padding: 8 15 8 15;
+}
+
+.search-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #0084ff;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+}
+
+/* Avatar styling */
+.avatar {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 3, 0, 0, 1);
+}
+
+/* Online status indicator */
+.status-online {
+    -fx-fill: #42b883;
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 2;
+}
+
+/* Message timestamp */
+.message-timestamp {
+    -fx-font-size: 11px;
+    -fx-opacity: 0.7;
+}
+
+/* Notification badge */
+.notification-badge {
+    -fx-background-color: #ff3040;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 2 6 2 6;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Typing indicator */
+.typing-indicator {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 18;
+    -fx-padding: 8 12 8 12;
+    -fx-opacity: 0.8;
+}
+
+/* Scroll bar styling */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(0,0,0,0.2);
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(0,0,0,0.4);
+}
+
+/* Login screen gradient */
+.login-background {
+    -fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Premium animations */
+@keyframes fadeIn {
+    from { -fx-opacity: 0; }
+    to { -fx-opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { -fx-translate-y: 20; -fx-opacity: 0; }
+    to { -fx-translate-y: 0; -fx-opacity: 1; }
+}
+
+/* Message send animation */
+.message-sent {
+    -fx-animation: slideIn 0.3s ease-out;
+}
+
+/* Hover effects */
+.hoverable:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-cursor: hand;
+}

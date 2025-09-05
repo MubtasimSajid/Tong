@@ -1,0 +1,218 @@
+/* Dark Theme for Tong Messenger */
+
+.root {
+    -fx-base: #2b2b2b;
+    -fx-background: #1a1a1a;
+    -fx-control-inner-background: #2b2b2b;
+    -fx-accent: #0084ff;
+    -fx-default-button: #0084ff;
+    -fx-focus-color: #0084ff;
+    -fx-faint-focus-color: #0084ff22;
+}
+
+/* Main Layout */
+.main-border-pane {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Left Sidebar */
+.sidebar {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #404040;
+}
+
+.header-section {
+    -fx-background-color: #0084ff;
+}
+
+.user-name {
+    -fx-text-fill: #ffffff;
+}
+
+.user-status {
+    -fx-text-fill: #b3d9ff;
+}
+
+.settings-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+
+.theme-toggle {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+}
+
+.theme-toggle:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 15;
+}
+
+/* Search and Input Fields */
+.search-field, .message-input {
+    -fx-background-color: #3a3a3a;
+    -fx-border-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: #b0b0b0;
+}
+
+.search-field:focused, .message-input:focused {
+    -fx-background-color: #404040;
+    -fx-border-color: #0084ff;
+    -fx-border-width: 2px;
+}
+
+/* Buttons */
+.new-chat-button {
+    -fx-background-color: #0084ff;
+    -fx-text-fill: #ffffff;
+}
+
+.new-chat-button:hover {
+    -fx-background-color: #006bd6;
+}
+
+.create-group-button {
+    -fx-background-color: #42b883;
+    -fx-text-fill: #ffffff;
+}
+
+.create-group-button:hover {
+    -fx-background-color: #369970;
+}
+
+.send-button {
+    -fx-background-color: #0084ff;
+    -fx-text-fill: #ffffff;
+}
+
+.send-button:hover {
+    -fx-background-color: #006bd6;
+}
+
+.action-button {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #b0b0b0;
+}
+
+.action-button:hover {
+    -fx-background-color: #4a4a4a;
+}
+
+/* Chat Area */
+.chat-header {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #404040;
+}
+
+.chat-partner-name {
+    -fx-text-fill: #ffffff;
+}
+
+.chat-partner-status {
+    -fx-text-fill: #b0b0b0;
+}
+
+.messages-area {
+    -fx-background-color: #1a1a1a;
+}
+
+/* Conversation List */
+.conversation-item {
+    -fx-background-color: transparent;
+}
+
+.conversation-item:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.conversation-item:selected {
+    -fx-background-color: #1e3a5f;
+}
+
+.conversation-name {
+    -fx-text-fill: #ffffff;
+}
+
+.conversation-preview {
+    -fx-text-fill: #b0b0b0;
+}
+
+/* Message Bubbles */
+.message-bubble-own {
+    -fx-background-color: #0084ff;
+    -fx-background-radius: 18 18 4 18;
+}
+
+.message-bubble-other {
+    -fx-background-color: #3a3a3a;
+    -fx-background-radius: 18 18 18 4;
+}
+
+.message-text-own {
+    -fx-fill: #ffffff;
+}
+
+.message-text-other {
+    -fx-fill: #ffffff;
+}
+
+.message-time-own {
+    -fx-fill: #b3d9ff;
+}
+
+.message-time-other {
+    -fx-fill: #b0b0b0;
+}
+
+/* System Messages */
+.system-message {
+    -fx-text-fill: #b0b0b0;
+}
+
+/* List Views */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #1e3a5f;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+/* Scroll Panes */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar {
+    -fx-background-color: #2b2b2b;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #555555;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #666666;
+}
