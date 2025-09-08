@@ -78,3 +78,54 @@ To change these settings, modify the `Server.java` file.
 4. **Port Already in Use**
     - Check if another instance is running
     - Change the port number in Server.java if needed
+
+## 🔒 Security Checklist
+
+Before deploying or sharing this project, ensure you have:
+
+### ✅ **Credentials Security**
+
+-   [ ] Replaced all actual database credentials with placeholders
+-   [ ] Removed actual email credentials and app passwords
+-   [ ] No hardcoded passwords or API keys in source code
+-   [ ] No sensitive information in comments
+
+### ✅ **File Security**
+
+-   [ ] Added comprehensive .gitignore file
+-   [ ] Excluded IDE configuration files (.vscode, .idea)
+-   [ ] Excluded compiled binaries and build artifacts
+-   [ ] Included Screenshots/ folder while excluding sensitive images
+
+### ✅ **Code Quality**
+
+-   [ ] No TODO/FIXME comments with sensitive information
+-   [ ] Proper exception handling without exposing sensitive data
+-   [ ] Consistent coding standards throughout the project
+-   [ ] Documentation is up-to-date and accurate
+
+### ✅ **Production Readiness**
+
+-   [ ] Environment-specific configuration separated from code
+-   [ ] Logging levels appropriate for production
+-   [ ] Database connection pooling considered for production
+-   [ ] Input validation implemented properly
+
+### ⚠️ **Before Going Public**
+
+-   [ ] Review all commit history for accidentally committed secrets
+-   [ ] Test the application with placeholder credentials
+-   [ ] Verify all documentation is accurate
+-   [ ] Consider adding integration tests
+
+## 🔧 Development Environment Setup
+
+### For Contributors:
+
+1. **Clone the repository**
+2. **Configure your local environment**:
+    - Copy CONFIGURATION.md as your setup guide
+    - Set up your local MySQL database
+    - Configure your email service credentials
+3. **Install dependencies** (JAR files are included in lib/)
+4. **Test the application** before making changes

@@ -115,6 +115,7 @@ secrets/
 *.temp
 *~
 
-# Screenshots (if containing sensitive information)
-screenshots/
-captures/
+# Screenshots (only if containing sensitive information)
+# Note: Screenshots/ folder is included in repo
+# screenshots/
+# captures/

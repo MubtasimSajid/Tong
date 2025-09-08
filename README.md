@@ -18,23 +18,23 @@ A JavaFX-based real-time messaging application designed for university students 
 
 ### Login Interface
 
-![Login Screen](screenshots/login.png)
+![Login Screen](Screenshots/login.png)
 
 ### Registration Process
 
-![Registration Form](screenshots/register.png)
+![Registration Form](Screenshots/register.png)
 
 ### Direct Messaging
 
-![Direct Messages](screenshots/directMessaging.png)
+![Direct Messages](Screenshots/directMessaging.png)
 
 ### Group Chat
 
-![Group Chat](screenshots/groupChat.png)
+![Group Chat](Screenshots/groupChat.png)
 
 ### Forum/Room Selection
 
-![Forum Interface](screenshots/forum.png)
+![Forum Interface](Screenshots/forum.png)
 
 ## �🛠️ Technology Stack
 
@@ -152,7 +152,7 @@ Tong/
 │       ├── register.fxml
 │       ├── room.fxml
 │       └── tongLogo.png
-├── screenshots/                    # Application screenshots
+├── Screenshots/                    # Application screenshots
 ├── lib/                            # External dependencies
 └── bin/                            # Compiled classes
 ```
