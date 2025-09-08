@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ap_main" prefHeight="396" prefWidth="478" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RoomController">
+    <children>
+        <Button fx:id="button_send" layoutX="404" layoutY="338" onAction="#sendMessage" text="Send" />
+        <TextField fx:id="tf_message" layoutX="148.0" layoutY="338" prefHeight="26" prefWidth="243.0" />
+        <ScrollPane fx:id="sp_main" fitToWidth="true" layoutX="148.0" layoutY="70" prefHeight="256" prefWidth="300.0">
+            <content>
+                <VBox fx:id="vbox_messages" prefHeight="248" prefWidth="297.0" />
+            </content>
+        </ScrollPane>
+        <Label fx:id="headLabel" layoutX="183.0" layoutY="10.0" text="Tong Chat">
+            <font>
+                <Font name="Ebrima Bold" size="23.0" />
+            </font>
+        </Label>
+      <HBox layoutX="14.0" layoutY="25.0" prefHeight="340.0" prefWidth="112.0">
+         <children>
+
+            <!-- Right side buttons -->
+            <VBox prefHeight="256.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <!-- Chat type buttons -->
+                  <Button fx:id="button_forum" onAction="#goToForum" prefWidth="90.0" text="Forum" />
+                  <Button fx:id="button_gcs" onAction="#joinGC" prefWidth="90.0" text="Join GC" />
+                  <Button fx:id="button_dms" onAction="#enterDM" prefWidth="90.0" text="Enter DM" />
+
+                  <!-- Separator space -->
+                  <Label prefHeight="20.0" />
+
+                  <!-- ID and display name management buttons -->
+                  <Button fx:id="button_get_randid" onAction="#getRandID" prefWidth="90.0" text="Get RandID" />
+                  <Button fx:id="button_set_randid" onAction="#setRandID" prefWidth="90.0" text="Set RandID">
+                     <VBox.margin>
+                        <Insets bottom="35.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="button_edit_name" onAction="#editDisplayName" prefWidth="90.0" text="Edit Name">
+                     <VBox.margin>
+                        <Insets top="14.0" />
+                     </VBox.margin></Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" top="55.0" />
+               </HBox.margin>
+            </VBox>
+         </children></HBox>
+      <Label fx:id="detailsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="47.0" prefWidth="300.0" text="Label">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
