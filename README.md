@@ -4,7 +4,28 @@ A JavaFX-based real-time messaging application designed for university students 
 
 ![Tong Logo](src/views/tongLogo.png)
 
-## 🚀 Features
+#### 🏗️ Architecture & Design
+
+For detailed system architecture, flowcharts, and class diagrams, see:
+**[📐 ARCHITECTURE_DIAGRAMS.md](ARCHITECTURE_DIAGRAMS.md)**
+
+This comprehensive documentation includes:
+
+-   System Architecture Overview
+-   Authentication Flow Diagrams
+-   Complete Class Diagrams
+-   Direct Message Flow Charts
+-   Group Chat Process Flows
+-   Database Schema Design
+-   Technology Stack Deep Dive
+
+## � Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Requesttures
 
 -   **User Authentication**: Secure login and registration system with email verification
 -   **Direct Messaging**: Private one-on-one conversations
@@ -36,7 +57,7 @@ A JavaFX-based real-time messaging application designed for university students 
 
 ![Forum Interface](Screenshots/forum.png)
 
-## �🛠️ Technology Stack
+## Technology Stack
 
 -   **Frontend**: JavaFX with FXML
 -   **Backend**: Java Socket Programming
@@ -45,7 +66,7 @@ A JavaFX-based real-time messaging application designed for university students 
 -   **Email Service**: JavaMail API with Gmail SMTP
 -   **UI Animations**: AnimateFX library
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before running this application, make sure you have:
 
@@ -116,7 +137,7 @@ The following JAR files are required (included in the `lib` folder):
 3. Run the server using the provided launch configuration
 4. Run the client application
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 Tong/
@@ -157,7 +178,7 @@ Tong/
 └── bin/                            # Compiled classes
 ```
 
-## 🎯 How to Use
+## How to Use
 
 ### Registration
 
@@ -178,14 +199,14 @@ Tong/
 -   **Group Chats**: Join or create group chat rooms for multiple participants
 -   **Real-time Updates**: Messages appear instantly for all connected users
 
-## 🔒 Security Features
+## Security Features
 
 -   **Password Hashing**: Passwords are encrypted using BCrypt
 -   **Email Verification**: PIN-based verification prevents unauthorized registrations
 -   **Session Management**: Secure session handling for authenticated users
 -   **Input Validation**: Comprehensive validation on both client and server sides
 
-## 🛡️ Database Schema
+## Database Schema
 
 The application uses the following main tables:
 
@@ -194,7 +215,7 @@ The application uses the following main tables:
 -   **Rooms**: Manages chat room information
 -   **Participants**: Links users to chat rooms
 
-## 🚦 Server Architecture
+## Server Architecture
 
 The application uses a multi-threaded server architecture:
 
@@ -203,7 +224,7 @@ The application uses a multi-threaded server architecture:
 -   **Message Broadcasting**: Real-time message distribution to relevant clients
 -   **Separate Handlers**: Dedicated handlers for DM and GC functionalities
 
-## 🎨 UI Components
+## UI Components
 
 The application features a modern JavaFX interface with:
 
@@ -212,7 +233,7 @@ The application features a modern JavaFX interface with:
 -   **User Profiles**: Customizable user information display
 -   **Animations**: Smooth transitions using AnimateFX
 
-## 📝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -220,7 +241,7 @@ The application features a modern JavaFX interface with:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
