@@ -6,7 +6,8 @@ A JavaFX-based real-time messaging application designed for university students 
 
 #### 🏗️ Architecture & Design
 
-For detailed system architecture, flowcharts, and class diagrams, see:
+For detailed system architecture, flowcharts, and class diagram- 🛠️ **Technology Stack Deep Dive**: Technical implementation details
+- 🖼️ **Visual Diagram Images**: PNG exports in `Architecture Diagrams/` folder, see:
 **[📐 ARCHITECTURE_DIAGRAMS.md](ARCHITECTURE_DIAGRAMS.md)**
 
 This comprehensive documentation includes:
@@ -18,6 +19,7 @@ This comprehensive documentation includes:
 -   Group Chat Process Flows
 -   Database Schema Design
 -   Technology Stack Deep Dive
+-   Visual Diagram Images (PNG in Architecture Diagrams/ folder)
 
 ## 🤝 Contributing
 
@@ -232,6 +234,7 @@ java -cp "bin;lib/*" --module-path "lib" --add-modules javafx.controls,javafx.fx
 
 ```
 Tong/
+├── Architecture Diagrams/          # Visual diagrams (PNG from Mermaid)
 ├── src/
 │   ├── App.java                    # Main application entry point
 │   ├── client/                     # Client-side networking
@@ -275,6 +278,8 @@ Tong/
 
 For detailed system architecture, flowcharts, and class diagrams, see:
 **[📊 ARCHITECTURE_DIAGRAMS.md](ARCHITECTURE_DIAGRAMS.md)**
+
+**Visual Diagrams**: All Mermaid diagrams are also available as images in the **[Architecture Diagrams/](Architecture%20Diagrams/)** directory for easy viewing and presentations.
 
 <details>
 <summary>🔍 Architecture Overview</summary>
@@ -505,6 +510,17 @@ Solution:
 1. Check if another instance is running
 2. Kill existing Java processes: taskkill /f /im java.exe
 3. Change port numbers in Server.java if needed
+```
+
+### Diagram Viewing Issues
+
+```bash
+Problem: Mermaid diagrams not rendering in ARCHITECTURE_DIAGRAMS.md
+Solution:
+1. Use GitHub's web interface (auto-renders Mermaid)
+2. View exported images in Architecture Diagrams/ folder
+3. Use VS Code with Mermaid Preview extension
+4. Export to PNG/SVG using Mermaid CLI or online editor
 ```
 
 </details>
